@@ -1,9 +1,10 @@
 package com.used.apple.dao;
 
-import static org.junit.Assert.*;
 
 import java.util.Iterator;
 import java.util.List;
+
+import javax.annotation.Resource;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,8 +14,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-
 import com.used.apple.entity.Iphone;
+
+
+
 
 @RunWith(SpringJUnit4ClassRunner.class)
 // 告诉junit spring配置文件
@@ -22,12 +25,24 @@ import com.used.apple.entity.Iphone;
 public class GetPriceTest {
 
 	@Autowired
-	private GetPrice getPrice;
+	private GetPrice getPriceDao;
 
+//	@Test
+//	public void test3() {
+//		final Logger logger=LoggerFactory.getLogger(this.getClass());
+//		List<Iphone> iphone = getPrice.model("5s");
+//		Iterator it = iphone.iterator();
+//		while (it.hasNext()) {
+//			System.out.println();
+//			logger.info("查到：" + it.next().toString());
+//			System.out.println();
+//		}
+//	}
+	
 	@Test
-	public void test3() {
+	public void test4() {
 		final Logger logger=LoggerFactory.getLogger(this.getClass());
-		List<Iphone> iphone = getPrice.model("5s");
+		List<Iphone> iphone = getPriceDao.price(1000, 2000);
 		Iterator it = iphone.iterator();
 		while (it.hasNext()) {
 			System.out.println();

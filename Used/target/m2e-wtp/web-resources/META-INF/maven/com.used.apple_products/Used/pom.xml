@@ -149,8 +149,6 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		<outputDirectory>${basedir}/webapp/WEB-INF/classes</outputDirectory>
-		<testOutputDirectory>${basedir}/webapp/WEB-INF/classes</testOutputDirectory>
 	</build>
 
 	<properties>
